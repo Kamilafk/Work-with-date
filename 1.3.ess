@@ -1,0 +1,4 @@
+start 
+new b number
+set b TIME
+loop  (
