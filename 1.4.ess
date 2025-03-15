@@ -1,1 +1,23 @@
 start
+new a number
+set a TIME
+new b number
+set b 1180224000000
+new age number
+set age a-b
+new year number
+set year 0
+loop s (age>31536000000)
+set age age-31536000000
+set year year+1
+end s
+log string "Мой возраст:" >> year
+loop ub (year>4)
+set year year-5
+end ub
+if (1>year)
+log string "В этом году у меня юбилей"
+else 
+log string "В этом году у меня нет юбилея"
+close
+finish
