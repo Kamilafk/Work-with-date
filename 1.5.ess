@@ -3,5 +3,41 @@ new b number
 set b TIME+10800000
 log string "Международный UTC:" >> TIME
 log string "GMT+3 MSK:" >> b
-
+loop s (b>31536000000)
+set b b-31536000000
+set year year+1
+end s
+new month number
+set month 0
+loop mo (b>2592000000)
+set b b-2592000000
+set month month+1
+end mo
+new day number
+set day 0
+loop da (b>86400000)
+set b b-86400000
+set day day+1
+end da
+new hour number
+set hour 0
+loop ho (b>360000)
+set b b-3600000
+set hour hour+1
+end ho
+new min number
+set min 0
+loop mi (b>60000)
+set b b-60000
+set min min+1
+end mi
+new sec number
+loop se (b>1000)
+set sec sec+1
+set b b-1000
+end se
+set day day-12
+set year year+1970
+set month month+1
+log string "Сегодняшняя дата: " >> day >> "-" >> month>> "-" >> year >> "." >> hour >> ":" >> min >> ":" >> sec
 finish
