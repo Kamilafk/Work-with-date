@@ -1,0 +1,26 @@
+start
+new b number
+set b TIME
+new year number
+set year 0
+loop s (b>31536000000)
+set b b-31536000000
+set year year+1
+end s
+new month number
+set month 0
+loop mo (b>2592000000)
+set b b-2592000000
+set month month+1
+end mo
+new day number
+set day 0
+loop da (b>86400000)
+set b b-86400000
+set day day+1
+end da
+set day day-12
+set year year+1970
+set month month+1
+log string "Сегодняшняя дата: " >> day >> "-" >> month>> "-" >> year
+finish
