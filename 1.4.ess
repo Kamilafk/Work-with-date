@@ -6,12 +6,12 @@ set b 1180224000000
 new age number
 set age a-b
 new year number
-set year 0
-loop s (age>31536000000)
+set year 1
+loop s (age>31535999999)
 set age age-31536000000
 set year year+1
 end s
-log string "Мой возраст:" >> year
+log string "В этом году мне " >> year 
 loop ub (year>4)
 set year year-5
 end ub
