@@ -1,6 +1,7 @@
 start
 new b number
-set b TIME+10800000
+set b TIME
+
 log string "Международный UTC:" >> TIME
 log string "GMT+3 MSK:" >> b
 finish
