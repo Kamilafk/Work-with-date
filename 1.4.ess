@@ -3,10 +3,11 @@ new a number
 set a TIME
 new b number
 set b 1180224000000
+loop now (
 new age number
 set age a-b
 new year number
-set year 1
+set year 0
 loop s (age>31535999999)
 set age age-31536000000
 set year year+1
